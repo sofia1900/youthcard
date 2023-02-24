@@ -10,9 +10,11 @@ public class MenuView {
             System.out.println("Introduce la opcion deseada");
             System.out.println("1. Crear una empresa");
             System.out.println("2. Listar empresas");
-            System.out.println("3. Crear una promocion");
-            System.out.println("4. Listar promociones");
-            System.out.println("5. Salir");
+            System.out.println("3. Crear un usuario");
+            System.out.println("4. Listar usuarios");
+            System.out.println("5. Crear una promocion");
+            System.out.println("6. Listar promociones");
+            System.out.println("7. Salir");
             opc = scanner.nextInt();
 
             switch (opc){
@@ -23,13 +25,19 @@ public class MenuView {
                     listEmpresas();
                     break;
                 case 3:
-                    newPromocion();
+                    newUsuario();
                     break;
                 case 4:
+                    listUsuarios();
+                    break;
+                case 5:
+                    newPromocion();
+                    break;
+                case 6:
                     listPromocion();
                     break;
             }
-        } while (opc < 5);
+        } while (opc < 7);
     }
 
     public void newPromocion (){
@@ -52,4 +60,12 @@ public class MenuView {
         listEmpresaForm.printEmpresas();
     }
 
+    public void newUsuario(){
+        NewUsuarioForm newUsuarioForm = new NewUsuarioForm();
+        newUsuarioForm.createNewUsuario();
+    }
+    public void listUsuarios(){
+        ListUsuarioForm listUsuarioForm = new ListUsuarioForm();
+        listUsuarioForm.printListUsuario();
+    }
 }
