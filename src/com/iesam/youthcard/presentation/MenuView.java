@@ -14,7 +14,9 @@ public class MenuView {
             System.out.println("4. Listar usuarios");
             System.out.println("5. Crear una promocion");
             System.out.println("6. Listar promociones");
-            System.out.println("7. Salir");
+            System.out.println("7. Crear una compra");
+            System.out.println("8. Listar compras");
+            System.out.println("9. Salir");
             opc = scanner.nextInt();
 
             switch (opc){
@@ -36,8 +38,14 @@ public class MenuView {
                 case 6:
                     listPromocion();
                     break;
+                case 7:
+                    newCompra();
+                    break;
+                case 8:
+                    listCompras();
+                    break;
             }
-        } while (opc < 7);
+        } while (opc < 9);
     }
 
     public void newPromocion (){
@@ -67,5 +75,15 @@ public class MenuView {
     public void listUsuarios(){
         ListUsuarioForm listUsuarioForm = new ListUsuarioForm();
         listUsuarioForm.printListUsuario();
+    }
+
+    public void newCompra (){
+        NewCompraForm newCompraForm = new NewCompraForm();
+        newCompraForm.addNewCompra();
+    }
+
+    public void listCompras(){
+        ListCompraForm listCompraForm = new ListCompraForm();
+        listCompraForm.printCompra();
     }
 }
