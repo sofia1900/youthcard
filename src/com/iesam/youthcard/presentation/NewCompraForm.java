@@ -28,22 +28,20 @@ public class NewCompraForm {
         compra.setId(scanner.nextLine());
         System.out.println("Introduce la fecha de la compra");
         compra.setFechaCompra(scanner.nextLine());
-        System.out.println("Introduce el nif del usuario");
-        compra.setUsuario(getUserByNif(scanner.nextLine()));
-        System.out.println("Introduce el id de la promocion");
-        compra.setPromocion(getPromocionById(scanner.nextLine()));
+        compra.setUsuario(getUserByNif());;
+        compra.setPromocion(getPromocionById());
 
         return compra;
     }
 
-    public Usuario getUserByNif (String nif){
+    public Usuario getUserByNif (){
         GetUsuarioForm getUsuarioForm = new GetUsuarioForm();
-        return getUsuarioForm.getUsuario(nif);
+        return getUsuarioForm.getUsuario();
     }
 
-    public Promocion getPromocionById (String id){
+    public Promocion getPromocionById (){
         GetPromocionForm getPromocionForm = new GetPromocionForm();
-        return getPromocionForm.getPromocion(id);
+        return getPromocionForm.getPromocion();
     }
 
 }
