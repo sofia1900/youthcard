@@ -23,7 +23,7 @@ public class PromocionFileLocalDataSource {
 
     private Gson gson = new Gson();
 
-    private final Type typeAlumnList = new TypeToken<ArrayList<>>() {
+    private final Type typeAlumnList = new TypeToken<ArrayList<Promocion>>() {
     }.getType();
 
     //Metodo SAVE

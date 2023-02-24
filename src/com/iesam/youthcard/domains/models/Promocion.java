@@ -1,5 +1,7 @@
 package com.iesam.youthcard.domains.models;
 
+import com.google.gson.Gson;
+
 public class Promocion {
     private String id;
     private String titulo;
@@ -36,5 +38,10 @@ public class Promocion {
 
     public void setDescuento(Integer descuento) {
         this.descuento = descuento;
+    }
+
+    @Override
+    public String toString (){
+        return new Gson().toJson(this);
     }
 }
